@@ -1,3 +1,10 @@
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 function triangle(n) {
   for (let i = 1; i <= n; i++) {
     let spaces = " ".repeat(i - 1);
@@ -6,5 +13,7 @@ function triangle(n) {
   }
 }
 
-
-triangle(7)
+rl.question("Masukkan angka : ", (y) => {
+  triangle(parseInt(y));  
+  rl.close();
+});

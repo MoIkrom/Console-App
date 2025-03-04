@@ -1,3 +1,10 @@
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
 function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i <= Math.sqrt(num); i++) {
@@ -16,4 +23,8 @@ function findPrimes(limit) {
   return primes;
 }
 
-console.log(findPrimes(10));
+rl.question("Masukkan angka : ", (y) => {
+  const result = findPrimes(parseInt(y));
+  console.log(result);
+  rl.close();
+});
